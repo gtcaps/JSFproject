@@ -5,8 +5,32 @@
       xmlns:h="http://java.sun.com/jsf/html">
           
     <h:head>
+        <h:outputStylesheet library="css" name="styles.css" />
     </h:head>
     <h:body>
-        Bienvenido a la pantalla principal
+        
+        <h:dataTable id="tblEmpleados" value="#{principalController.empleados}" var="empleado" headerClass="headerTable" rowClasses="rowTable rowTableLine">
+            <h:column>
+                <f:facet name="header">Nombre</f:facet>
+                <h:outputText value="#{empleado.nombre}"  />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Apellido</f:facet>
+                <h:outputText value="#{empleado.apellido}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Puesto</f:facet>
+                <h:outputText value="#{empleado.puesto}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Estatus</f:facet>
+                <h:outputText value="HABILITADO" rendered="#{empleado.estatus}" />
+                <h:outputText value="INHABILITADO" rendered="#{!empleado.estatus}" />
+            </h:column>
+        </h:dataTable>
+        
     </h:body>
 </html>
