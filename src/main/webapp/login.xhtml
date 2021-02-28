@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+    <h:head>
+        
+    </h:head>
+    
+    <h:body>
+        
+        <h:form id="formLogin">
+            <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Usuario"/>
+                <h:inputText value="#{loginController.usuario}"/>
+                
+                <h:outputLabel value="Contraseña"/>
+                <h:inputSecret value="#{loginController.password}"/>
+                
+                <h:commandButton value="Entrar" action="#{loginController.ingresar}"/>
+                
+            </h:panelGrid>
+        </h:form>
+        
+    </h:body>
+    
+</html>
