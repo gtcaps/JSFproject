@@ -2,28 +2,51 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
-    
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
     <h:head>
-        <h:outputStylesheet library="css" name="styles.css"/>
+        <!--<h:outputStylesheet library="css" name="styles.css"/>-->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+        <h:outputStylesheet library="css" name="primeflex.min.css" />
     </h:head>
-    
+
     <h:body>
-        
-        <h:form id="formLogin">
-            <h:panelGrid columns="2">
-                              
-                <h:outputLabel value="Usuario" styleClass="colorText" />
-                <h:inputText id="txtUsuario" value="#{loginController.usuario}" required="true" requiredMessage="El usuario es requerido"/>
-                
-                <h:outputLabel value="Contraseña" styleClass="colorText" />
-                <h:inputSecret id="txtPassword" value="#{loginController.password}" required="true" requiredMessage="El password es requerido"/>
-                
-                <h:commandButton value="Entrar" action="#{loginController.ingresar}"/>
-                
-            </h:panelGrid>
-        </h:form>
-        
+
+        <div class="p-grid">
+            <div class="p-col"></div>
+            
+            <!--COLUMNA CENTRAL DONDE ESTARA EL LOGIN-->
+            <div class="p-col-12 p-lg-3">
+
+                <h:form id="formLogin">
+                    <p:growl id="growl" sticky="true"/>
+
+                    <p:panel id="pnlLogin" header="Inicio de Sesion" style="text-align:center;">
+
+                        <p:graphicImage name="img/avatar.png" width="25%"/>
+
+                        <p:panelGrid id="pnlGridLogin" columns="1" styleClass="ui-noborder" style="width: 100%;">
+
+                            <p:outputLabel value="Usuario" styleClass="colorText" for="txtUsuario" style="float:left;" />
+                            <p:inputText id="txtUsuario" value="#{loginController.usuario}" required="true" requiredMessage="El usuario es requerido" style="width: 100%;"/>
+
+                            <p:outputLabel value="Contraseña" styleClass="colorText" for="txtPassword" style="float:left;"/>
+                            <p:password id="txtPassword" value="#{loginController.password}" required="true" requiredMessage="El password es requerido" style="width: 100%;"/>
+
+                            <p:commandButton value="Entrar" action="#{loginController.ingresar}" update="pnlGridLogin, growl" style="float:left;"/>
+
+                        </p:panelGrid>
+                    </p:panel>
+
+                </h:form> 
+
+            </div>
+            
+            <div class="p-col"></div>
+        </div>
+
+
     </h:body>
-    
+
 </html>
