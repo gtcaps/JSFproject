@@ -5,19 +5,19 @@
       xmlns:h="http://java.sun.com/jsf/html">
     
     <h:head>
-        
+        <h:outputStylesheet library="css" name="styles.css"/>
     </h:head>
     
     <h:body>
         
         <h:form id="formLogin">
             <h:panelGrid columns="2">
+                              
+                <h:outputLabel value="Usuario" styleClass="colorText" />
+                <h:inputText id="txtUsuario" value="#{loginController.usuario}" required="true" requiredMessage="El usuario es requerido"/>
                 
-                <h:outputLabel value="Usuario"/>
-                <h:inputText value="#{loginController.usuario}"/>
-                
-                <h:outputLabel value="Contraseña"/>
-                <h:inputSecret value="#{loginController.password}"/>
+                <h:outputLabel value="Contraseña" styleClass="colorText" />
+                <h:inputSecret id="txtPassword" value="#{loginController.password}" required="true" requiredMessage="El password es requerido"/>
                 
                 <h:commandButton value="Entrar" action="#{loginController.ingresar}"/>
                 
