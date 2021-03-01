@@ -37,11 +37,22 @@ public class EmpleadoService {
         empleadoApple.setNombre("Oscar");
         empleadoApple.setApellido("Blancarte");
         empleadoApple.setPuesto("Arquitecto de Software");
-        empleadoApple.setEstatus(true);
+        empleadoApple.setEstatus(false);
         
         empleados.add(empleadoIBM);
         empleados.add(empleadoMicrosoft);
         empleados.add(empleadoApple);
+        
+        
+        for(int i = 0; i < 50; i++) {
+            Empleado nuevoEmpleado = new Empleado();
+            nuevoEmpleado.setNombre("Nombre " + i);
+            nuevoEmpleado.setApellido("Apellido" + i);
+            nuevoEmpleado.setPuesto("Programador " + i);
+            nuevoEmpleado.setEstatus(true);
+            empleados.add(nuevoEmpleado);
+        }
+        
         
         return empleados;
     }
