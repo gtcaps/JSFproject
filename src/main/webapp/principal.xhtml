@@ -11,6 +11,9 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
     </h:head>
     <h:body>
+        
+        <p:outputLabel value="Bienvenido #{sessionController.usuarioDTO.usuario} a la pantalla principal" />
+        <p:commandButton value="Cerrar Sesion" action="#{sessionCloseController.cerrarSesion}"/>
 
         <div class="p-d-flex p-jc-between">
             <div>

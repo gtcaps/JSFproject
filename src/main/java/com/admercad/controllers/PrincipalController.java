@@ -1,4 +1,4 @@
-package com.admercad.p.controllers;
+package com.admercad.controllers;
 
 import com.admercad.entities.Empleado;
 import com.admercad.services.EmpleadoService;
